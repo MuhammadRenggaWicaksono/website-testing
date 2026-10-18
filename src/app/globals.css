@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+/* Definisi Tema & Warna Kustom DSC untuk Tailwind v4 */
+@theme {
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-brandRed: #c81e1e;
+  --color-brandRed-dark: #8b0e0e;
+  --color-brandRed-light: #e02424;
+  --color-brandRed-deep: #a71818;
+
+  --color-brandOrange: #f99f1b;
+  --color-brandOrange-dark: #e08300;
+  --color-brandOrange-vibrant: #f37021;
+
+  --shadow-polaroid: 0 12px 30px -10px rgba(0, 0, 0, 0.15);
+  --shadow-floating: 0 20px 40px -15px rgba(200, 30, 30, 0.2);
+  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================
+   STYLING WAJIB LENIS SCROLL
+   ========================================== */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* ==========================================
+   GLOBAL STYLES
+   ========================================== */
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #ffffff;
+  color: #2d3748;
+  overflow-x: hidden;
+}
+
+/* Gradient Backgrounds */
+.hero-bg-gradient {
+  background: radial-gradient(circle at 90% 10%, rgba(249, 159, 27, 0.22) 0%, rgba(254, 240, 138, 0.15) 35%, rgba(255, 255, 255, 0) 70%),
+              radial-gradient(circle at 100% 90%, rgba(200, 30, 30, 0.18) 0%, rgba(255, 255, 255, 0) 50%);
+}
+
+/* Polaroid Tilts */
+.tilt-left { transform: rotate(-3deg); }
+.tilt-right { transform: rotate(3deg); }
+.tilt-left-sm { transform: rotate(-1.5deg); }
+.tilt-right-sm { transform: rotate(1.5deg); }
+
+.polaroid-card {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.polaroid-card:hover {
+  transform: rotate(0deg) scale(1.04) translateY(-8px);
+  z-index: 20;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.2);
+}
+
+/* Active Nav Indicator */
+.nav-link {
+  position: relative;
+}
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #a71818;
+  border-radius: 9999px;
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #f99f1b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a71818;
+}
+
+/* Device Frame Styling */
+.phone-mockup {
+  border: 12px solid #1f2937;
+  border-radius: 40px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+}
+
+/* Dot Pattern Graphic */
+.bg-dots {
+  background-image: radial-gradient(#f99f1b 2px, transparent 2px);
+  background-size: 16px 16px;
+}
